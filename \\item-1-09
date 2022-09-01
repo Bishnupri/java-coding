@@ -1,0 +1,50 @@
+Write a program to define a class Item containing code and price.
+Accept this data for five objects using array of objects.
+Display code, price in tabular form and also, display total price of all items.
+package arry.java;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Item {
+
+	  String code;
+	  int price;
+	  
+	  Item(String c,int p)
+	  {
+	    
+	    code = c;
+	    price = p;
+	  }
+	  
+	  public static void main(String args[])throws IOException
+	  {
+	    Item[] I = new Item[5];
+	    String a;
+	    int b,total_cost=0;
+	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	    
+	    for(int i=0;i<5;i++)
+	    {
+	      
+	      System.out.print("Enter code  for item"+(i+1)+" : ");
+	      a = br.readLine();
+	      System.out.print("Enter price for item"+(i+1)+" : ");
+	      b = Integer.parseInt(br.readLine());
+	      I[i] = new Item(a,b);
+	    }
+	    
+	    System.out.println("Item Code Item Price");
+	    System.out.println("--------- ----------");
+	    for(int i=0;i<5;i++)
+	    {
+	      System.out.print("\t"+I[i].code);
+	      System.out.println("\t\t"+I[i].price);
+	      total_cost = total_cost + I[i].price;
+	    }
+	    System.out.print("Total Price = "+total_cost);
+	  }
+
+}
