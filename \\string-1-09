@@ -1,0 +1,13 @@
+WAP to input an array having 5 strings and display them.
+package arry.java;
+
+public class app {
+	public static void main(String[] args) {
+        int[] array = {11, 28, 65, 98, 68};
+
+        for (int element: array) {
+            System.out.println(element);
+        }
+    }
+
+}
